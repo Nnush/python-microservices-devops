@@ -13,7 +13,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: 0403456/backend:latest
+    image: anoushkashendurkar/backend:latest
     volumes:
       - shared-data:/shared
     environment:
@@ -27,7 +27,7 @@ services:
       - "5000:5000"
 
   frontend:
-    image: 0403456/frontend:latest
+    image: anoushkashendurkar/frontend:latest
     environment:
       BACKEND_URL: http://backend:5000/api/data
     depends_on:
@@ -36,7 +36,7 @@ services:
       - "8080:80"
 
   logger:
-    image: 0403456/logger:latest
+    image: anoushkashendurkar/logger:latest
     volumes:
       - shared-data:/shared
     ports:
